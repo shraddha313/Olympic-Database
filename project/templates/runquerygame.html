@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <style>  
+        body  {  
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image:url("https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1200&q=60");  
+ 
+            background-color: #cccccc;
+            height: 500px;
+            background-position: center;
+            background-repeat: repeat;
+            background-size: cover;
+            position: relative;
+        }  
+        td {
+            text-align: center;
+        }
+    </style>  
+    <title> olympic web app </title>
+</head>
+
+<body>
+    <left>
+        <a href="/">
+            <button>homepage</button>
+        </a>
+    </left>
+    
+    <left>
+        <a href="/showgame">
+            <button>gamedatabase</button>
+        </a>
+    </left>
+
+    <left>
+        <a href="/insertgame">
+            <button>insertgame</button>
+        </a>
+    </left>
+
+    <center>
+        <h1 style="color:black;"> Show game Records </h1>
+    </hr>
+</hr>
+        <table border="1" bgcolor="lightblue">
+            <tr>
+                <th> gamename </th>
+                <th> yearadded </th>
+                <th> yearremoved </th>
+                <th> year </th>
+                
+            </tr>
+            {% for row in rows %}
+            <tr>
+                <td> {{ row[0] }}</td>
+                <td> {{ row[1] }}</td>
+                <td> {{ row[2] }}</td>
+                <td> {{ row[3] }}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </center>
+</body>
+</html>

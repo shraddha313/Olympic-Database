@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <style>  
+        body  {  
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-image:url("https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmFuZG9tfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1200&q=60");  
+            background-color: #cccccc;
+            height: 500px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }  
+    </style>  
+    <title> olymic web app </title>
+</head>
+
+<body>
+<left>
+    <a href="/">
+        <button>homepage</button>
+    </a>
+</left>
+
+<left>
+    <a href="/showgame">
+        <button>gamedatabase</button>
+    </a>
+</left>
+
+<left>
+    <a href="/insertgame">
+        <button>insertgame</button>
+    </a>
+</left>
+
+    <center>
+        <h1 style="color:black;"> Delete Game Record </h1>
+    </hr>
+
+        <form method="POST" action="/deletegame">
+           
+        <table border="1" bgcolor="lightblue">
+            <tr>
+                <td>gamename</td>
+                <td><input type="text" name="gamename" placeholder="gamename" ></td>
+            </tr>
+
+            <tr>
+                <td>yearadded</td>
+                <td><input type="number" name="yearadded" placeholder="yearadded" ></td>
+            </tr>
+
+            <tr>
+                <td>yearremoved</td>
+                <td><input type="number" name="yearremoved" placeholder="yearremoved" ></td>
+            </tr>
+
+            <tr>
+                <td>year</td>
+                <td><input type="number" name="year" placeholder="year" ></td>
+            </tr>
+
+           
+
+            <tr>
+                <td><input type="submit" placeholder="deleterecord"></td>
+                <td>
+                    {% if rows %}
+                    {% for row in rows %}
+                    <b style="color: red;">{{row}}</b>
+                    {% endfor %}
+                    {% endif %}
+                </td>
+            </tr>
+        </table>
+        </form>
+    </center>
+</body>
+</html>
